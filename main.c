@@ -119,9 +119,7 @@ void mini_shell_loop(int batchMode, FILE* file)
         }
         
         
-        
         /* ----------------------- Handling processes ----------------------- */
-        
         
         pid = fork(); // spawning a process
         
@@ -168,7 +166,6 @@ void mini_shell_loop(int batchMode, FILE* file)
                 waitpid(pid, &status, 0);
                 
             }
-            
             
             if(barrier)
             { /* waiting for all processes to finish before displaying next prompt */
