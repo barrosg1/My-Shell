@@ -1,0 +1,5 @@
+./pidloop -s 500 -c 30&
+./pidloop -s 600 -c 30&
+./pidloop -s 700 -c 30&
+./pidloop -s 800 -c 30&
+barrier
