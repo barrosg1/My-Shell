@@ -19,9 +19,7 @@
 #define TRUE 1
 #define FALSE 0
 
-
 void mini_shell_loop(int, FILE*);
-
 
 int main(int argc, char *argv[])
 {
@@ -118,7 +116,7 @@ void mini_shell_loop(int batchMode, FILE* file)
 			doInBackground = TRUE;
 		}
 
-
+        
 		/* ----------------------- Handling processes ----------------------- */
 
 		pid = fork(); // spawning a process
@@ -143,13 +141,9 @@ void mini_shell_loop(int batchMode, FILE* file)
 
 			if(!doInBackground)
 			{ /* if process is not in background then wait for current process to finish */
-				//printf("Spawned foreground process pid: %d\n", pid);
-
+                
 				waitpid(pid, &status, 0);
-
-				//printf("foreground process pid %d terminated\n", pid);
 			}
-
 
 			if(barrier)
 			{ /* waiting for all processes to finish before displaying next prompt */
